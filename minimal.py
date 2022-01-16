@@ -101,10 +101,3 @@ plt.plot(y_valid_est, '-b', label='Simulated')
 plt.plot(y_valid.numpy(), 'k', label='Measured')
 plt.title('Validation Data')
 leg = f11.legend();
-
-# it makes no sense to analyze a nn for system identification, just using it as a simple input output black box, we have to make sure not to analyze the difference between the input and ouput, we also have to consider that change of the state. Thus the NN shall also predict the x_dot and x (x2=y). important to understand!
-# just the difference between to parameters ist not enough for the NN to understand the behaviour, you need to give the NN also information about the changes (derivatives of the states)
-
-# maybe try your own generated data with some overleight sinsoidal function overlayed to produce an nonlinear system, which you can than estimate with an ANN. pro: yo can provide as much data as needed and the created data does not contain any noise or fluctuations which cause huge indifferences whcih cannot be extrapolated by the simple ANN
-
-# conclusion: weird things can happen which cannot be explained physically anymore. other methods take place to evaluate the results from the builded nn 
